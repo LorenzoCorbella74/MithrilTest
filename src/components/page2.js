@@ -49,20 +49,6 @@ export let Page2Component = {
         console.log("removing DOM element")
     },
 
-    // NON FUNZIONA + IN MITHRIL 1 !!?!?!?!
-    controller: function () {
-        this.data = [];
-        window.setInterval(function () {
-            for (var i = 0; i < 50; ++i) {
-                this.data[i] = Math.random();
-            }
-            if (running) {
-                m.redraw();     // si forza il redraw
-            }
-        }.bind(this), 20);
-    },
-
-
     view: function(ctrl) {
         console.log(ctrl);
         return m(".container", [

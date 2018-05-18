@@ -21,12 +21,12 @@ let show = false;
 let dinamicClass = "btn-info"; // .btn-danger
 
 // funzione esterna al componente
-function testToggle(){
-    console.log('testFunc fired...');
+function testToggle(event){
+    console.log('testFunc fired...',event);
     show=!show;
 }
-function testClass(){
-    console.log('testClass fired...');
+function testClass(event){
+    console.log('testClass fired...',event);
     dinamicClass = dinamicClass=='btn-info'? 'btn-danger':'btn-info';
 }
 
@@ -40,13 +40,22 @@ let HelloWorldComponent = {
         skill:5
     },
     secret: "fake",
+
+    // NON FUNZIONA + IN MITHRIL 1 !!?!?!?!
+    controller: function () {
+        this.data = data;
+        this.testCtrl = function(e) {
+            console.log('testCtrl fired....');
+        };
+    },
+
     // la vista
     view: function (componente) {
         console.log('Passed: ', componente);    // il componente è un vnode
         return m(".container", [
             m(Menu),
             m("br"),
-            m("h3", {class: "lead"}, "componente Padre"),
+            m("h3.lead", "componente Padre"),
             m("p", ["Learning environment for the FE Framework ", m('span',[m('a',{href:'https://mithril.js.org/'},'Mithril')])]),
             m('button.btn.btn-primary',{onclick: function() {
                 count++;
@@ -68,7 +77,11 @@ let HelloWorldComponent = {
             m("hr"),
             m('button.btn',{class:dinamicClass, onclick: testClass}, "toggle class"),    //  se la classe non cambia si mette nel selettore, se dinamica si mette nell'attributo
             m("hr"),
-            m(ChildComponent,{secret:  componente.state.secret})    // si passano i dati al componente figlio !!!
+            m('button.btn',{ onclick: this.controller.testCtrl}, "test ctrl"),    //  si testa una funzione presente nel ctrl DENTRO il componente
+            m("hr"),
+
+            // si passano i dati al componente figlio !!!
+            m(ChildComponent,{secret:  componente.state.secret})    
         ]);
     }
 }
@@ -77,7 +90,7 @@ let HelloWorldComponent = {
 // abilitando l'autoredraw da eventi dell'utente.
 // m.mount(root, HelloWorldComponent);
 
-// si utilizza il router
+// si utilizza il router abilitando l'autoredraw
 m.route(document.body, "/home", {
     "/home": HelloWorldComponent, // defines `http://localhost/#!/home`
     "/page2": Page2Component, 

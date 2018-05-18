@@ -36,6 +36,8 @@ http://ratfactor.com/mithril2.html
 http://mike-ward.net/2016/08/01/exploring-mithril-a-javascript-framework-for-building-brilliant-applications/
 https://bitbucket.org/ratfactor/mithril-simpleapp/src/1f3f7eeb7b2156d6cf7cd18b39cf102fccf0a30d/index.html?at=default&fileviewer=file-view-default
 https://dev.to/botherchou/a-beginners-attempt-at-mithriljs-6km
+https://auth0.com/blog/build-robust-apps-with-mithril-and-auth0/
+https://github.com/getDanArias/Mithril-Sample-App
 
 # ROUTER
 http://sagegerard.com/mithril-router-cleanup/
