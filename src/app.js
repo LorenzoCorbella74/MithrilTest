@@ -1,6 +1,9 @@
 import m from "mithril";
 import {store} from "./models";
-import {ChildComponent} from"./child";  // importazione componente
+
+import {Menu} from "./menu";
+import {ChildComponent} from"./child";  
+import {Page2Component} from"./page2";  
 
 const root = document.body;
 
@@ -27,7 +30,7 @@ let HelloWorldComponent = {
     view: function (componente) {
         console.log('Passed: ', componente);    // il componente è un vnode
         return m(".container", [
-            m("h1", {class: "header"}, "Mithril test"),
+            m(Menu),
             m("h3", {class: "lead"}, "componente Padre"),
             m("p", ["Learning environment for the FE Framework ", m('span',[m('a',{href:'https://mithril.js.org/'},'Mithril')])]),
             m('button.btn.btn-primary',{onclick: function() {
@@ -54,4 +57,9 @@ let HelloWorldComponent = {
 
 // Monta un componente su un elemento del DOM, 
 // abilitando l'autoredraw da eventi dell'utente.
-m.mount(root, HelloWorldComponent);
+// m.mount(root, HelloWorldComponent);
+
+m.route(document.body, "/home", {
+    "/home": HelloWorldComponent, // defines `http://localhost/#!/home`
+    "/page2": Page2Component
+})

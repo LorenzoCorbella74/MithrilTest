@@ -37,6 +37,9 @@ http://mike-ward.net/2016/08/01/exploring-mithril-a-javascript-framework-for-bui
 https://bitbucket.org/ratfactor/mithril-simpleapp/src/1f3f7eeb7b2156d6cf7cd18b39cf102fccf0a30d/index.html?at=default&fileviewer=file-view-default
 https://dev.to/botherchou/a-beginners-attempt-at-mithriljs-6km
 
+# ROUTER
+http://sagegerard.com/mithril-router-cleanup/
+
 ### SERVER RENDERING
 https://github.com/MithrilJS/mithril-node-render
 https://isomorphic-mithril.mvlabs.it/en/

@@ -11,3 +11,6 @@ export let ChildComponent = {
         ]);
     }
 };
+
+
+
