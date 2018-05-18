@@ -50,6 +50,7 @@ https://dhinesh03.github.io/mithril-starter-kit/
 
 ### TEMPLATE COVERTER
 http://arthurclemens.github.io/mithril-template-converter/
+[MSX HTML syntax preprocessor](https://github.com/insin/msx)
 
 ### Components
 https://arthurclemens.github.io/polythene-demos/mithril/#/

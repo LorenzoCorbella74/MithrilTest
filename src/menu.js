@@ -4,9 +4,7 @@ export let Menu = {
     view: function() {
         return m("nav.navbar.navbar-expand-lg.navbar-light.bg-light",
         [
-          m("a.navbar-brand[href='#']", 
-            "Mithril TEST"
-          ),
+          m("a.navbar-brand[href='#']", "Mithril TEST"),
           m("button.navbar-toggler[aria-controls='navbarSupportedContent'][aria-expanded='false'][aria-label='Toggle navigation'][data-target='#navbarSupportedContent'][data-toggle='collapse'][type='button']", 
             m("span.navbar-toggler-icon")
           ),
@@ -24,9 +22,5 @@ export let Menu = {
           )
         ]
       )
-       /*  m("nav", [
-            m("a[href=/home]", {oncreate: m.route.link}, "Home"),
-            m("a[href=/page2]", {oncreate: m.route.link}, "Page 2"),
-        ]) */
     }
 }
