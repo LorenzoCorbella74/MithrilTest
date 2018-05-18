@@ -4,7 +4,8 @@
   "description": "Test di Mithril con webpack",
   "main": "",
   "scripts": {
-    "start": "webpack src/app.js --output bin/app.js -d --watch"
+    "start": "webpack src/app.js --output bin/app.js -d --watch",
+    "build": "webpack src/index.js --output bin/app.js -p",
   },
   "keywords": ["mithril","webpack"],
   "author": "Lorenzo Corbella",

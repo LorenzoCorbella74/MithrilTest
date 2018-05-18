@@ -1,15 +1,16 @@
 import m from "mithril";
-import {store} from "./models";
+import {store} from "./globals";
 
-import {Menu} from "./menu";
-import {ChildComponent} from"./child";  
-import {Page2Component} from"./page2";  
+// COMPONENTS
+import {Menu} from "./components/menu";
+import {ChildComponent} from"./components/child";  
+import {Page2Component} from"./components/page2";  
+import {Page3Component} from"./components/page3";  
 
 const root = document.body;
 
 /* 
     m.render: renderizza un singolo vnode:
-
     m.render(root, m(".container", [
         m("h1", {class: "header"}, "Mithril test"),
         m("p", "Learning environment..."),
@@ -17,11 +18,16 @@ const root = document.body;
 */
 
 let show = false;
+let dinamicClass = "btn-info"; // .btn-danger
 
 // funzione esterna al componente
 function testToggle(){
     console.log('testFunc fired...');
     show=!show;
+}
+function testClass(){
+    console.log('testClass fired...');
+    dinamicClass = dinamicClass=='btn-info'? 'btn-danger':'btn-info';
 }
 
 const firstLabel = 'test handler'
@@ -56,8 +62,11 @@ let HelloWorldComponent = {
             m('button.btn.btn-primary',{onclick: function() {
                 store.age++;
             }}, "Modifica oggetto globale: "+store.age),
+            m("hr"),
             m('button.btn.btn-info',{onclick: testToggle}, "toggle visibility"),
             show ? m("p", "vedo") : null,
+            m("hr"),
+            m('button.btn',{class:dinamicClass, onclick: testClass}, "toggle class"),    //  se la classe non cambia si mette nel selettore, se dinamica si mette nell'attributo
             m("hr"),
             m(ChildComponent,{secret:  componente.state.secret})    // si passano i dati al componente figlio !!!
         ]);
@@ -68,9 +77,9 @@ let HelloWorldComponent = {
 // abilitando l'autoredraw da eventi dell'utente.
 // m.mount(root, HelloWorldComponent);
 
-
 // si utilizza il router
 m.route(document.body, "/home", {
     "/home": HelloWorldComponent, // defines `http://localhost/#!/home`
     "/page2": Page2Component, 
+    "/page3": Page3Component, 
 })

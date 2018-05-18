@@ -16,6 +16,9 @@ export let Menu = {
                 ),
                 m("li.nav-item", 
                   m("a.nav-link[href=/page2]",  {oncreate: m.route.link},"Page 2")
+                ),
+                m("li.nav-item", 
+                  m("a.nav-link[href=/page3]",  {oncreate: m.route.link},"Page 3")
                 )
               ]
             )
@@ -23,4 +26,4 @@ export let Menu = {
         ]
       )
     }
-}
+};

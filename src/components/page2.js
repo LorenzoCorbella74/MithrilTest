@@ -1,5 +1,5 @@
 import m from "mithril";
-import {Menu} from"./menu";
+import {Menu} from "./menu";
 
 let running = false;
 
@@ -24,7 +24,7 @@ export let Page2Component = {
                 this.data[i] = Math.random()*10;
             }
             if (running) {
-                m.redraw();     // si forza il redraw
+                m.redraw();     // si forza il redraw !!!
             }
         }.bind(this), 20);
        
@@ -53,7 +53,7 @@ export let Page2Component = {
     controller: function () {
         this.data = [];
         window.setInterval(function () {
-            for (var i = 0; i < 25; ++i) {
+            for (var i = 0; i < 50; ++i) {
                 this.data[i] = Math.random();
             }
             if (running) {
@@ -68,8 +68,11 @@ export let Page2Component = {
         return m(".container", [
             m(Menu),
             m("br"),
-            m('button.btn-lg btn-success', {onclick: run}, 'Click to run'),
-            m('button.btn-lg btn-danger', {onclick: stop}, 'Click to stop'), m('table.table table-condensed', [
+            m("p",["Esempio di ", m("strong", "m.redraw()"),". ","Si creano 50 nuovi item ogni 20ms e si forza il rendering manualmente (in caso di eventi scatenati dall'utente si ha in automatico)"]),
+            m('button.btn btn-success', {onclick: run}, 'Click to run'),
+            m('button.btn btn-danger', {onclick: stop}, 'Click to stop'),
+            m("br"),
+            m('table.table table-condensed', [
             m('thead', m('tr', [m('th', 'Key'), m('th', 'Value')])),
             m('tbody', [
                 ctrl.state.data.map(function (value, index) {
