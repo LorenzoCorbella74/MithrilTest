@@ -49,8 +49,8 @@ export let Page2Component = {
         console.log("removing DOM element")
     },
 
-    view: function(ctrl) {
-        console.log(ctrl);
+    view: function(vnode) {
+        console.log(vnode);
         return m(".container", [
             m(Menu),
             m("br"),
@@ -61,7 +61,7 @@ export let Page2Component = {
             m('table.table table-condensed', [
             m('thead', m('tr', [m('th', 'Key'), m('th', 'Value')])),
             m('tbody', [
-                ctrl.state.data.map(function (value, index) {
+                vnode.state.data.map(function (value, index) {
                     return m('tr', [
                         m('td', {style: 'width:50%'}, index),
                         m('td', {style: 'width:50%'}, value)

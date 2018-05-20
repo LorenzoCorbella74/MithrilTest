@@ -5,13 +5,17 @@
   "main": "",
   "scripts": {
     "start": "webpack src/app.js --output bin/app.js -d --watch",
-    "build": "webpack src/index.js --output bin/app.js -p",
+    "build": "webpack src/index.js --output bin/app.js -p"
   },
-  "keywords": ["mithril","webpack"],
+  "keywords": [
+    "mithril",
+    "webpack"
+  ],
   "author": "Lorenzo Corbella",
   "license": "ISC",
   "dependencies": {
-    "mithril": "^1.1.6"
+    "mithril": "^1.1.6",
+    "mithril-stream": "^1.1.0"
   },
   "devDependencies": {
     "webpack": "^4.8.3",

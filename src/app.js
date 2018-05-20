@@ -6,6 +6,8 @@ import {Menu} from "./components/menu";
 import {ChildComponent} from"./components/child";  
 import {Page2Component} from"./components/page2";  
 import {Page3Component} from"./components/page3";  
+import {Page4Component} from"./components/page4";  
+import {Page5Component} from"./components/page5";  
 
 const root = document.body;
 
@@ -95,4 +97,6 @@ m.route(document.body, "/home", {
     "/home": HelloWorldComponent, // defines `http://localhost/#!/home`
     "/page2": Page2Component, 
     "/page3": Page3Component, 
+    "/page4": Page4Component, 
+    "/page5": Page5Component, 
 })

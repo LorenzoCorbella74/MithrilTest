@@ -11,7 +11,7 @@ export let Menu = {
           m(".collapse.navbar-collapse", 
             m("ul.navbar-nav.mr-auto",
               [
-                m("li.nav-item.active", 
+                m("li.nav", 
                   m("a.nav-link[href=/home]", {oncreate: m.route.link},"Home")
                 ),
                 m("li.nav-item", 
@@ -19,6 +19,12 @@ export let Menu = {
                 ),
                 m("li.nav-item", 
                   m("a.nav-link[href=/page3]",  {oncreate: m.route.link},"Page 3")
+                ),
+                m("li.nav-item", 
+                  m("a.nav-link[href=/page4]",  {oncreate: m.route.link},"Page 4")
+                ),
+                m("li.nav-item", 
+                  m("a.nav-link[href=/page5]",  {oncreate: m.route.link},"Page 5")
                 )
               ]
             )
