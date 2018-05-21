@@ -36,8 +36,10 @@ http://ratfactor.com/mithril2.html
 http://mike-ward.net/2018/05/09/mithril-rising/
 https://bitbucket.org/ratfactor/mithril-simpleapp/src/1f3f7eeb7b2156d6cf7cd18b39cf102fccf0a30d/index.html?at=default&fileviewer=file-view-default
 https://dev.to/botherchou/a-beginners-attempt-at-mithriljs-6km
+http://positor.nl/2017/03/02/Frontend-Wars-Ember-vs-Mithril.html
 https://auth0.com/blog/build-robust-apps-with-mithril-and-auth0/
 https://github.com/getDanArias/Mithril-Sample-App
+https://snippets.aktagon.com/snippets/789-mithril-button-example-with-debounce#
 
 # ROUTER
 http://sagegerard.com/mithril-router-cleanup/
@@ -61,3 +63,9 @@ https://github.com/MithrilJS/mithril.js/wiki/Recipes-and-Snippets#authentication
 ### jsfiddle TEMPLATES
 http://jsfiddle.net/user/ramnathv/fiddles/
 http://jsfiddle.net/7JNUy/1/
+
+### REACTIVITY / STREAM
+https://mithril.js.org/stream.html
+https://james-forbes.com/?/posts/how-i-use-mithril
+https://james-forbes.com/?/posts/intro-to-streams
+https://www.ericponto.com/blog/2015/05/31/rxjs-and-mithril/

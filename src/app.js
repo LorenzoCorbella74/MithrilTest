@@ -8,6 +8,7 @@ import {Page2Component} from"./components/page2";
 import {Page3Component} from"./components/page3";  
 import {Page4Component} from"./components/page4";  
 import {Page5Component} from"./components/page5";  
+import {Page6Component} from"./components/page6";  
 
 const root = document.body;
 
@@ -36,6 +37,7 @@ const firstLabel = 'test handler'
 let count = 0;  // dati ESTERNI al componente (modificabili)
 
 let HelloWorldComponent = {
+
     // dati 'privati' del componente (modificabili) - Component state
     secretData:{
         profession:"haker",
@@ -52,8 +54,8 @@ let HelloWorldComponent = {
     },
 
     // la vista
-    view: function (componente) {
-        console.log('Passed: ', componente);    // il componente è un vnode
+    view: function (vnode) {
+        console.log('Passed: ', vnode);    // il componente è un vnode
         return m(".container", [
             m(Menu),
             m("br"),
@@ -61,13 +63,13 @@ let HelloWorldComponent = {
             m("p", ["Learning environment for the FE Framework ", m('span',[m('a',{href:'https://mithril.js.org/'},'Mithril')])]),
             m('button.btn.btn-primary',{onclick: function() {
                 count++;
-                componente.state.secretData.skill++;
-            }}, !count? firstLabel: "skill " + componente.state.secretData.skill),
+                vnode.state.secretData.skill++; /* SI ACCEDE ALLO STATO!!! */
+            }}, !count? firstLabel: "skill " + vnode.state.secretData.skill),
             m("hr"),
             m('p',[
                 "Dati passati dal componente alla vista: ",
-                m("span.badge.badge-primary", componente.state.secretData.profession),
-                m("span.badge.badge-warning", componente.state.secret),
+                m("span.badge.badge-primary", vnode.state.secretData.profession),
+                m("span.badge.badge-warning", vnode.state.secret),
             ]),
             m('p',["Dati passati da obj globale alla vista: " , m("span.badge.badge-info", store.nome)]),
             m('button.btn.btn-primary',{onclick: function() {
@@ -83,7 +85,7 @@ let HelloWorldComponent = {
             m("hr"),
 
             // si passano i dati al componente figlio !!!
-            m(ChildComponent,{secret:  componente.state.secret})    
+            m(ChildComponent,{secret:  vnode.state.secret})    
         ]);
     }
 }
@@ -99,4 +101,5 @@ m.route(document.body, "/home", {
     "/page3": Page3Component, 
     "/page4": Page4Component, 
     "/page5": Page5Component, 
+    "/page6": Page6Component, 
 })
