@@ -9,6 +9,7 @@ import {Page3Component} from"./components/page3";
 import {Page4Component} from"./components/page4";  
 import {Page5Component} from"./components/page5";  
 import {Page6Component} from"./components/page6";  
+import {Page7Component} from"./components/page7";  
 
 const root = document.body;
 
@@ -102,4 +103,5 @@ m.route(document.body, "/home", {
     "/page4": Page4Component, 
     "/page5": Page5Component, 
     "/page6": Page6Component, 
+    "/page7": Page7Component, 
 })

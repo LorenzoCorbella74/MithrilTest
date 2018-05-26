@@ -28,6 +28,9 @@ export let Menu = {
                 ),
                 m("li.nav-item", 
                   m("a.nav-link[href=/page6]",  {oncreate: m.route.link},"Request")
+                ),
+                m("li.nav-item", 
+                  m("a.nav-link[href=/page7]",  {oncreate: m.route.link},"app sample")
                 )
               ]
             )
