@@ -54,10 +54,17 @@ let HelloWorldComponent = {
         };
     },
 
+    /* onbeforeremove: function(vnode) {
+        vnode.dom.classList.add("exit")
+        return new Promise(function(resolve) {
+            setTimeout(resolve, 500)
+        })
+    }, */
+
     // la vista
     view: function (vnode) {
         console.log('Passed: ', vnode);    // il componente è un vnode
-        return m(".container", [
+        return m(".container.in", [
             m(Menu),
             m("br"),
             m("h3.lead", "componente Padre"),

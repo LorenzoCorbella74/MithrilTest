@@ -28,7 +28,7 @@ export function Page3Component(vnode) {
             test:"component data"
         },
         view: function(vnode) {
-            return m(".container", [
+            return m(".container.in", [
                 m(Menu),
                 m("br"),
                 m("p",["Esempio di ", m("strong", "closure compoenent syntax"),". ","Al posto di un oggetto Componente si usa una funzione che ritorna il componente"]),

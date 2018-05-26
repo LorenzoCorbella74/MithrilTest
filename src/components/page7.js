@@ -73,7 +73,7 @@ export function Page7Component(vnode) {
             actions.setQuery('Testament');
             actions.search()
         },
-        view: () => m(".container", [
+        view: () => m(".container.in", [
             m(Menu),
             m("br"),
             m('h2', 'ITunes Sampler'),

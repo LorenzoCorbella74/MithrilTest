@@ -2,7 +2,6 @@ import m from "mithril";
 import stream from 'mithril/stream';
 import {Menu} from "./menu";
 
-
 const listExample = {
     view: (v) => m("div", [
         m("br"),
@@ -34,7 +33,7 @@ export function Page6Component(vnode) {
 
     return {
         oninit: state.loadUsers,
-        view: () => m(".container", [
+        view: () => m(".container.in", [
             m(Menu),
             m("br"),
             m("p", ["Esempio di ", m("strong", "m.request()"), "."]),

@@ -51,7 +51,7 @@ export let Page2Component = {
 
     view: function(vnode) {
         console.log(vnode);
-        return m(".container", [
+        return m(".container.in", [
             m(Menu),
             m("br"),
             m("p",["Esempio di ", m("strong", "m.redraw()"),". ","Si creano 50 nuovi item ogni 20ms e si forza il rendering manualmente (in caso di eventi scatenati dall'utente si ha in automatico)"]),

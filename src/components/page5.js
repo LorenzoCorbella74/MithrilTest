@@ -21,7 +21,7 @@ export function Page5Component(vnode) {
     let dependentVar = input.map(input=>input.length>=10?"too long":"");
 
     return {
-        view: () => m(".container", [
+        view: () => m(".container.in", [
             m(Menu),
             m("br"),
             m("p",["Esempio di ", m("strong", "stream()"),", libreria di oggetti reattivi"]),

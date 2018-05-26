@@ -17,7 +17,7 @@ export function Page4Component(vnode) {
     let input = 'default';  // modello !!!!
 
     return {
-        view: () => m(".container", [
+        view: () => m(".container.in", [
             m(Menu),
             m("br"),
             m("p",["Esempio di ", m("strong", "two way data binding")," dalla vista al modello e viceversa"]),
